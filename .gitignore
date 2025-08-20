@@ -1,0 +1,23 @@
+*.pyc
+__pycache__/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+*.DS_Store
+*.sqlite
+*.log
+*.csv  # Add any data files you don't want to track
+
+venv/
+.venv/
+env/
+
+.idea/
+.vscode/
+
+downloads*
+
+*.swp
+```
