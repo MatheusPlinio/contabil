@@ -1,12 +1,13 @@
 import os
-import time
 import requests
 from utils.file_utils import remove_file
+from repositories.upload_repository import UploadRepository
 
 
 class RequestUploader:
     def __init__(self, download_dir="./pdfs"):
         self.download_dir = download_dir
+        self.uploader = UploadRepository()
 
     def _create_session(self):
         session = requests.Session()
@@ -39,6 +40,7 @@ class RequestUploader:
 
                 if url and not url.endswith('/aaa') and 'error' not in url.lower():
                     if url.startswith('http') or '0x0.st' in url:
+                        self.uploader.save(filename, url)
                         remove_file(filepath)
                         print(f"✅ Upload concluído: {url}")
                         return url

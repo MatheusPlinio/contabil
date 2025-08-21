@@ -17,7 +17,7 @@ env/
 .idea/
 .vscode/
 
-downloads*
+tmp*
 
 *.swp
 ```
