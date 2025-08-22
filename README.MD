@@ -68,7 +68,7 @@ git clone https://github.com/seu-usuario/desafio-conthabil.git
 2. Configurar Variáveis de Ambiente
 
 Crie um arquivo .env na raiz do projeto:
-
+(Necessário um banco de dados postgres configurado e ativo)
 ```bash
 DATABASE_URL=postgresql://user:password@db:5432/desafio
 ```
@@ -82,3 +82,4 @@ docker build -t desafio-conthabil .
 ```bash
 docker run -p 8000:8000 desafio-conthabil
 ```
+
