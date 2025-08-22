@@ -12,6 +12,8 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt .
 RUN pip install --prefix=/install --no-cache-dir -r requirements.txt
 
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+
 COPY . .
 
 FROM python:3.11-slim
