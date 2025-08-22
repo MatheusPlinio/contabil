@@ -27,6 +27,7 @@ RUN apt-get update && apt-get install -y \
     libxrandr2 \
     xdg-utils \
     wget \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt .
