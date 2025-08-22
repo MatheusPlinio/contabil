@@ -27,4 +27,7 @@ COPY --from=builder /app /app
 
 EXPOSE 8000
 
+HEALTHCHECK --interval=10s --timeout=5s --start-period=5s --retries=5 \
+  CMD curl -f http://localhost:8000/health || exit 1
+
 CMD ["gunicorn", "-k", "uvicorn.workers.UvicornWorker", "main:app", "-b", "0.0.0.0:8000", "--workers", "2", "--timeout", "120"]
